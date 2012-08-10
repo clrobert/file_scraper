@@ -1,7 +1,6 @@
-video_scraper
+file_scraper
 =============
-My first python program: a lightweight video scraper written in Python.
-
+My first python program!
 
 Current features: 
 
