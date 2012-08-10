@@ -1,12 +1,20 @@
 video_scraper
 =============
-My first python program:
-A lightweight video scraper written in Python.
+My first python program: a lightweight video scraper written in Python.
 
-Features:
-  Current:
-    Download files by extension.
-  Future:
-    Follow links by keyword.
-    Download files by keyword and extension.
-    Ignore relative location links (eg., #top, #comments...)
+
+Current features: 
+
+  + Download files by extension
+
+Future features: 
+  
+  + Multithreaded
+
+  + Follow links by keyword
+    
+  + Download files by keyword and/or extension
+    
+  + Ignore relative location links (eg., #top, #comments...)
+  
+  + Various performance improvements
