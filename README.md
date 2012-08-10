@@ -9,7 +9,8 @@ Current features:
 Future features: 
 
   + Testing
-  + Code cleanup, better exceptions, site as param
+  + Code cleanup, better exceptions
+  + Site, Keywords, and Extensions as command-line params
   + Multithreaded
   + Follow links by keyword
   + Download files by keyword and/or extension
