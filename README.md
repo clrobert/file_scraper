@@ -6,6 +6,7 @@ If you need an industrial-level python scraper, you should check out Scrapy http
 
 Current features: 
 
+  + Is also secretly a web spider
   + Download files by extension
 
 Future features: 
