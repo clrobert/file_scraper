@@ -8,13 +8,11 @@ Current features:
   + Download files by extension
 
 Future features: 
-  
-  + Multithreaded
 
+  + Testing
+  + Code cleanup, better exceptions, site as param
+  + Multithreaded
   + Follow links by keyword
-    
   + Download files by keyword and/or extension
-    
   + Ignore relative location links (eg., #top, #comments...)
-  
   + Various performance improvements
