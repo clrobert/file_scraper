@@ -1,6 +1,8 @@
 file_scraper
 =============
-My first python program!
+My first python program! This is mostly a learning project. 
+
+If you need an industrial-level python scraper, you should check out Scrapy https://github.com/scrapy/scrapy
 
 Current features: 
 
