@@ -8,14 +8,18 @@ from BeautifulSoup import BeautifulSoup
 
 def main():
   global site
+  global format
 
   if not "http" in sys.argv[1]:
-  	site = "http://" + sys.argv[1]
+    site = "http://" + sys.argv[1]
   else:
-  	site = sys.argv[1]
+    site = sys.argv[1]
+
+  format = sys.argv[2]
+  print format
 
   try:
-    runScraper("mp4")
+    runScraper(format)
   except urllib2.HTTPError:
     print "Are you sure you're online?"
 
@@ -44,6 +48,9 @@ def removeExternalUrls(links):
 
   return urls
 
+def removeJavascript(urls):
+  return pruneListByRegex(urls, "javascript")
+
 # Return all downloadable links which match our preferences.
 # Preferences NYI
 def getDownloadLinks(urls, file_format):
@@ -53,15 +60,13 @@ def removeRelativeLocationUrls(urls):
   return pruneListByRegex(urls, "comment")
 
 def pruneListByRegex(a_list, format):
-
   results = []
   format = re.compile(format)
-
   for item in a_list:
+    print item
     candidate = parseFilename(item)
-    if not format.match(candidate):
+    if candidate is not '' and not format.match(candidate):
       results.append(item)
-
   return results
 
 def getUrlsByRegex(urls, format):
@@ -87,7 +92,9 @@ def parseLink(tag_link):
   if tag_link.has_key("href"):
     tag_link = tag_link['href']
     url = tag_link.encode('ascii')
-    return url
+  else:
+    url = ''
+  return url
 
 # Remove all links which have already been downloaded.
 # @NOTE: NYI
@@ -129,7 +136,10 @@ def parseFilenames(links):
 
 # Individual helper method.
 def parseFilename(link):
-  return re.split("/", link).pop()
+  filename = re.split("/", link).pop()
+  if filename is None:
+    filename = ''
+  return filename
 
 def runScraper(file_format):
   follow_links = []
@@ -155,7 +165,11 @@ def runScraper(file_format):
 
       all_page_urls = parseLinks(all_page_links); #print "Hyperlink anchors removed from potential links.";# print all_page_urls
 
+      all_page_urls = removeJavascript(all_page_urls)
+
       all_page_urls = removeRelativeLocationUrls(all_page_urls)
+
+
 
       internal_urls = removeExternalUrls(all_page_urls);# print "Purged external urls from potential links."; #print follow_links
 
