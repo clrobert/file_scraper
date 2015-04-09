@@ -8,12 +8,13 @@ Current features:
 
   + Is also secretly a web spider
   + Download files by extension
+  + Site and Extensions as command-line params
 
 Future features: 
 
   + Testing
   + Code cleanup, better exceptions
-  + Site, Keywords, and Extensions as command-line params
+  + Keywords as cl-params
   + Multithreaded
   + Follow links by keyword
   + Download files by keyword and/or extension
