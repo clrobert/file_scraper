@@ -6,9 +6,6 @@ import time
 from sets import Set
 from BeautifulSoup import BeautifulSoup
 
-# site
-#site = 'http://www.reddit.com'
-
 def main():
   global site
 
