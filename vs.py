@@ -1,4 +1,5 @@
 import sys
+import os
 import re
 import urllib2
 import urllib
@@ -9,6 +10,12 @@ from BeautifulSoup import BeautifulSoup
 def main():
   global site
   global format
+  global base_path
+
+  base_path = "downloads/"
+
+  if not os.path.exists(base_path):
+    os.makedirs(base_path)
 
   if not "http" in sys.argv[1]:
     site = "http://" + sys.argv[1]
@@ -124,7 +131,7 @@ def downloadFiles(fileNames, fileLinks):
 # Open a "web file" and write it to the current directory.
 # @TODO: autopopulate a directory structure and give options.
 def downloadFile(write_to, read_from):
-  file = open(write_to, 'w')
+  file = open(base_path + write_to, 'w')
   print >> file, (site + read_from)
 
 # Return filenames given urls.
