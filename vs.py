@@ -6,10 +6,17 @@ import time
 from sets import Set
 from BeautifulSoup import BeautifulSoup
 
-global site
-site = 'http://www.railscasts.com'
+# site
+#site = 'http://www.reddit.com'
 
 def main():
+  global site
+
+  if not "http" in sys.argv[1]:
+  	site = "http://" + sys.argv[1]
+  else:
+  	site = sys.argv[1]
+
   try:
     runScraper("mp4")
   except urllib2.HTTPError:
@@ -90,8 +97,6 @@ def parseLink(tag_link):
 def removeDownloaded(links):
   return links
 
-
-
 # Remove all links which have already been downloaded.
 # @NOTE: NYI
 def removeFollowed(urls, followed):  
@@ -130,7 +135,8 @@ def parseFilename(link):
   return re.split("/", link).pop()
 
 def runScraper(file_format):
-  follow_links = []; print "Scraping " + site + " ..."
+  follow_links = []
+  print "Scraping " + site + " ..."
   url = site;
   follow_links.append(site)
   followed = []
