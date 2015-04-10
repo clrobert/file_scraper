@@ -1,4 +1,4 @@
-file_scraper
+miniscraper
 =============
 My first python program! This is mostly a learning project. 
 
