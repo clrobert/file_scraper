@@ -1,4 +1,4 @@
-miniscraper
+mini_scraper
 =============
 If you need an industrial-level python scraper, you should check out Scrapy https://github.com/scrapy/scrapy
 
