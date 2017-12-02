@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/clrobert/mini_scraper/badges/gpa.svg)](https://codeclimate.com/github/clrobert/miniscraper)
+[![Code Climate](https://codeclimate.com/github/clrobert/mini_scraper/badges/gpa.svg)](https://codeclimate.com/github/clrobert/mini_scraper)
 
 If you need an industrial-level python scraper, you should check out Scrapy https://github.com/scrapy/scrapy
 
